@@ -1,0 +1,37 @@
+version: '3.4'
+
+services:
+  customerapi:
+    image: aabdelgayed/customerapi:dev_latest
+    ports:
+      - 5001:5001
+      - 1433:1433
+    deploy:
+      replicas: 4
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+  
+  apigateway:
+    image: aabdelgayed/apigateway:dev_latest
+    ports:
+      - 80:80
+    deploy:
+      replicas: 4
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+
+  visualizer:
+      image: dockersamples/visualizer:stable
+      ports:
+        - "8080:8080"
+      volumes:
+        - "/var/run/docker.sock:/var/run/docker.sock"
+      deploy:
+        placement:
+          constraints: [node.role == manager]

@@ -1,0 +1,91 @@
+{
+    "Routes": [
+      {
+        "DownstreamPathTemplate": "/health",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5000
+          }
+        ],
+        "UpstreamPathTemplate": "/customerapi/health",
+        "UpstreamHttpMethod": [ "POST" ]
+      },
+      {
+        "DownstreamPathTemplate": "/identity/{everything}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5000
+          }
+        ],
+        "UpstreamPathTemplate": "/customerapi/identity/{everything}",
+        "UpstreamHttpMethod": [ "POST", "GET" ]
+      },
+      {
+        "DownstreamPathTemplate": "/brand/{everything}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5000
+          }
+        ],
+        "UpstreamPathTemplate": "/customerapi/brand/{everything}",
+        "UpstreamHttpMethod": [ "POST", "GET" ]
+      },
+      {
+        "DownstreamPathTemplate": "/deal/{everything}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5000
+          }
+        ],
+        "UpstreamPathTemplate": "/customerapi/deal/{everything}",
+        "UpstreamHttpMethod": [ "POST", "GET" ]
+      },
+      {
+        "DownstreamPathTemplate": "/client/{everything}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5000
+          }
+        ],
+        "UpstreamPathTemplate": "/customerapi/client/{everything}",
+        "UpstreamHttpMethod": [ "POST", "GET" ]
+      },
+      {
+        "DownstreamPathTemplate": "/control/{everything}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5000
+          }
+        ],
+        "UpstreamPathTemplate": "/customerapi/control/{everything}",
+        "UpstreamHttpMethod": [ "POST", "GET" ]
+      },
+      {
+        "DownstreamPathTemplate": "/{everything}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "visualizer",
+            "Port": 8080
+          }
+        ],
+        "UpstreamPathTemplate": "/monitor",
+        "UpstreamHttpMethod": [ "POST", "GET" ]
+      }
+    ],
+    "GlobalConfiguration": {
+      "BaseUrl": "http://localhost"
+    }
+  }
