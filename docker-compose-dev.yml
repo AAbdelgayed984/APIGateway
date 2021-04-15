@@ -14,6 +14,19 @@ services:
       restart_policy:
         condition: on-failure
   
+  servicingapi:
+    image: aabdelgayed/servicingapi:dev_latest
+    ports:
+      - 5001:5001
+      - 1433:1433
+    deploy:
+      replicas: 4
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+  
   apigateway:
     image: aabdelgayed/apigateway:dev_latest
     ports:

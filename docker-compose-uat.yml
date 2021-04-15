@@ -2,7 +2,20 @@ version: '3.4'
 
 services:
   customerapi:
-    image: aabdelgayed/customerapi:dev_latest
+    image: aabdelgayed/customerapi:uat_latest
+    ports:
+      - 5001:5001
+      - 1433:1433
+    deploy:
+      replicas: 4
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+  
+  servicingapi:
+    image: aabdelgayed/servicingapi:uat_latest
     ports:
       - 5001:5001
       - 1433:1433
@@ -15,7 +28,7 @@ services:
         condition: on-failure
   
   apigateway:
-    image: aabdelgayed/apigateway:dev_latest
+    image: aabdelgayed/apigateway:uat_latest
     ports:
       - 80:80
     deploy:
