@@ -6,6 +6,30 @@
         "DownstreamHostAndPorts": [
           {
             "Host": "localhost",
+            "Port": 5001
+          }
+        ],
+        "UpstreamPathTemplate": "/servicingapi/health",
+        "UpstreamHttpMethod": [ "POST" ]
+      },
+      {
+        "DownstreamPathTemplate": "/identity/{everything}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5001
+          }
+        ],
+        "UpstreamPathTemplate": "/servicingapi/identity/{everything}",
+        "UpstreamHttpMethod": [ "POST", "GET" ]
+      },
+      {
+        "DownstreamPathTemplate": "/health",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
             "Port": 5000
           }
         ],
