@@ -36,18 +36,21 @@
         "UpstreamPathTemplate": "/servicingapi/swaggerui",
         "UpstreamHttpMethod": [ "POST", "GET" ]
       },
+
+
+      
       {
         "DownstreamPathTemplate": "/",
         "DownstreamScheme": "http",
         "DownstreamHostAndPorts": [
           {
             "Host": "localhost",
-            "Port": 5000
+            "Port": 5001
           }
         ],
-        "UpstreamPathTemplate": "/customerapi/health",
-        "UpstreamHttpMethod": [ "POST" ]
-      },
+        "UpstreamPathTemplate": "/customerapi/swaggerui",
+        "UpstreamHttpMethod": [ "POST", "GET" ]
+      }, 
       {
         "DownstreamPathTemplate": "/health",
         "DownstreamScheme": "http",
@@ -120,6 +123,10 @@
         "UpstreamPathTemplate": "/customerapi/control/{everything}",
         "UpstreamHttpMethod": [ "POST", "GET" ]
       },
+     
+     
+     
+      
       {
         "DownstreamPathTemplate": "/{everything}",
         "DownstreamScheme": "http",
