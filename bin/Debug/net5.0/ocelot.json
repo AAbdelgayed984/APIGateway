@@ -24,6 +24,8 @@
         "UpstreamPathTemplate": "/servicingapi/identity/{everything}",
         "UpstreamHttpMethod": [ "POST", "GET" ]
       },
+
+
       {
         "DownstreamPathTemplate": "/health",
         "DownstreamScheme": "http",
@@ -95,7 +97,9 @@
         ],
         "UpstreamPathTemplate": "/customerapi/control/{everything}",
         "UpstreamHttpMethod": [ "POST", "GET" ]
-      },
+      },    
+     
+      
       {
         "DownstreamPathTemplate": "/{everything}",
         "DownstreamScheme": "http",
