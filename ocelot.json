@@ -24,30 +24,8 @@
         "UpstreamPathTemplate": "/servicingapi/identity/{everything}",
         "UpstreamHttpMethod": [ "POST", "GET" ]
       },
-      {
-        "DownstreamPathTemplate": "/",
-        "DownstreamScheme": "http",
-        "DownstreamHostAndPorts": [
-          {
-            "Host": "localhost",
-            "Port": 5001
-          }
-        ],
-        "UpstreamPathTemplate": "/servicingapi/swaggerui",
-        "UpstreamHttpMethod": [ "POST", "GET" ]
-      },
-      {
-        "DownstreamPathTemplate": "/",
-        "DownstreamScheme": "http",
-        "DownstreamHostAndPorts": [
-          {
-            "Host": "localhost",
-            "Port": 5000
-          }
-        ],
-        "UpstreamPathTemplate": "/customerapi/health",
-        "UpstreamHttpMethod": [ "POST" ]
-      },
+
+
       {
         "DownstreamPathTemplate": "/health",
         "DownstreamScheme": "http",
@@ -119,7 +97,9 @@
         ],
         "UpstreamPathTemplate": "/customerapi/control/{everything}",
         "UpstreamHttpMethod": [ "POST", "GET" ]
-      },
+      },    
+     
+      
       {
         "DownstreamPathTemplate": "/{everything}",
         "DownstreamScheme": "http",
