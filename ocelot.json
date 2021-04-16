@@ -105,7 +105,7 @@
         "DownstreamScheme": "http",
         "DownstreamHostAndPorts": [
           {
-            "Host": "visualizer",
+            "Host": "localhost",
             "Port": 8080
           }
         ],
